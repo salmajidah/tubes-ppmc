@@ -11,17 +11,17 @@ char inputseed (FILE *fp){
 	fscanf(fp,"%d",&rows);
 	fscanf(fp,"%d",&cols);
 	char seed[rows][cols];
-	size_t n=0;
+	int n=0,i=0;
 	
-	while (n<rows && fgets(seed[n],sizeof(*seed),stdin)!=NULL){ //compile di geany doang, di command prompt gabisa keluar outputnya
-		n++;						//belum tau slahnya dimana
+	while (n<rows && fgets(seed[n],sizeof(*seed),stdin)!=NULL){ //di geany compile, di command prompt belum dicoba
+		n++;
 		}
-	for (size_t i=0;i<n;i++){
-		puts(seed[i]);
+	while (i<cols && fgets(seed[i],sizeof(*seed),stdin)!=NULL){
+		i++;
 		}
-		
-	return(seed[rows][cols]);
+	return(seed[n][i]);
 }
+
 
 
 //supaya tetangga di sekitar bisa bersifat toroidal

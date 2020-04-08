@@ -6,19 +6,23 @@ int cols;
 int rows; 
 
 //membaca input file eksternal
-char inputseed (fp){
-	int i,j;
+char inputseed (FILE *fp){
 	int rows,cols;
-	scanf("%d",rows);
-	scanf("%d",cols);
+	fscanf(fp,"%d",&rows);
+	fscanf(fp,"%d",&cols);
 	char seed[rows][cols];
-	for(i=0;i<rows;i++){
-		for(j=0;j<cols;j++){
-			fputs(seed[i][j],fp);
+	size_t n=0;
+	
+	while (n<rows && fgets(seed[n],sizeof(*seed),stdin)!=NULL){ //compile di geany doang, di command prompt gabisa keluar outputnya
+		n++;						//belum tau slahnya dimana
 		}
-	}
-	return(seed[i][j]);	
+	for (size_t i=0;i<n;i++){
+		puts(seed[i]);
+		}
+		
+	return(seed[rows][cols]);
 }
+
 
 //supaya tetangga di sekitar bisa bersifat toroidal
 int WrapAround (int index, int length) { 

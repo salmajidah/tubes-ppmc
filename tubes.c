@@ -30,7 +30,7 @@ int Neighbors (char cell[cols][rows],int x, int y) {
 		}
 	}
 	if (cell[x][y] == 'X') { 
-		sum = sum - cell[x][y]; //karena tidak menghitung dirinya sendiri
+		sum = sum - 1; //karena tidak menghitung dirinya sendiri
 	}
 	return sum;
 } 

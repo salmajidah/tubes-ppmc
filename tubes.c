@@ -5,6 +5,21 @@
 int cols;
 int rows; 
 
+//membaca input file eksternal
+char inputseed (fp){
+	int i,j;
+	int rows,cols;
+	scanf("%d",rows);
+	scanf("%d",cols);
+	char seed[rows][cols];
+	for(i=0;i<rows;i++){
+		for(j=0;j<cols;j++){
+			fputs(seed[i][j],fp);
+		}
+	}
+	return(seed[i][j]);	
+}
+
 //supaya tetangga di sekitar bisa bersifat toroidal
 int WrapAround (int index, int length) { 
 	if (index == -1) { 

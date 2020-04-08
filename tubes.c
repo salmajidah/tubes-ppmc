@@ -4,6 +4,19 @@
 int cols;
 int rows; 
 
+//supaya tetangga di sekitar bisa bersifat toroidal
+int WrapAround (int index, int length) { 
+	if (index == -1) { 
+		return length - 1; 
+	} 
+	else if (index == length) { 
+		return 0; 
+	}
+	else {
+		return index; 
+	}
+}
+
 //ini fungsi untuk menghitung tetangga sel (Neighbor) 
 //x dan y adalah indeks lokasi saat itu
 int Neighbors (char cell[cols][rows],int x, int y) {
@@ -12,7 +25,7 @@ int Neighbors (char cell[cols][rows],int x, int y) {
 	for (i = -1; i<2; i++) { 
 		for (j = -1; j<2; j++) { 
 			if (cell[x+i][y+j] == 'X') { 
-				sum = sum + cell[x+i][y+j];
+				sum = sum + cell[WrapAround(x+i,cols)][WrapAround(y+j,rows)];
 			}
 		}
 	}
@@ -21,8 +34,5 @@ int Neighbors (char cell[cols][rows],int x, int y) {
 	}
 	return sum;
 } 
-
-
-
 
 

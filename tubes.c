@@ -13,7 +13,7 @@ char inputseed (FILE *fp){
 	char seed[rows][cols];
 	int n=0,i=0;
 	
-	while (n<rows && fgets(seed[n],sizeof(*seed),stdin)!=NULL){ //di geany compile, di command prompt belum dicoba
+	while (n<rows && fgets(seed[n],sizeof(*seed),stdin)!=NULL){ //di geany compile, di command prompt ga bisa keluar outputnya gatau knp
 		n++;
 		}
 	while (i<cols && fgets(seed[i],sizeof(*seed),stdin)!=NULL){

@@ -1,5 +1,6 @@
 //ini buat tubes ppmc
 #include <stdio.h> 
+#include <time.h>
 
 int cols;
 int rows; 
@@ -34,5 +35,77 @@ int Neighbors (char cell[cols][rows],int x, int y) {
 	}
 	return sum;
 } 
+
+//untuk delay
+void delay(int number_of_milliseconds) 
+{  
+    // Storing start time 
+    clock_t start_time = clock(); 
+  
+    // looping till required time is not achieved 
+    while (clock() < start_time + number_of_milliseconds) 
+        ; 
+}
+
+//Sambutan awal
+void greetings(){
+	printf("Selamat datang di Conway Game of Life!\n\n");
+	printf("Game ini merupakan game mengenai sel yang dapat mati maupun hidup, bergantung pada kondisi sel tetangganya\n\n");
+	
+	printf("Aturan:\n");
+	printf("1. Jika terdapat sebuah sel hidup yang memiliki kurang dari 1 tetangga yang hidup,\n   sel tersebut mati pada iterasi selanjutnya (underpopulation)\n");
+	printf("2. Jika terdapat sebuah sel hidup yang memiliki 2 tetangga yang hidup, sel tersebut\n   tetap hidup pada iterasi selanjutnya (next generation).\n");
+	printf("3. Jika terdapat sebuah sel hidup yang memiliki lebih dari 4 tetangga yang hidup,\n   sel tersebut mati pada iterasi selanjutnya (overpopulation).\n");
+	printf("4. Jika terdapat sebuah sel mati yang memiliki 3 tetangga yang hidup, sel tersebut\n   menjadi hidup pada iterasi selanjutnya (reproduction).\n");
+	printf("\nPermainan akan dimulai dengan kondisi awal pada file yang Anda masukkan\n");
+	printf("Input file:");
+	//printf("");
+}
+
+
+//PROGRAM UTAMA
+int main(){
+	//Deklarasi Variabel
+	char file[100];
+	FILE *fp;
+	int i, loop, pilihan;
+	
+	//Sambutan awal
+	greetings();
+	
+	//Menerima nama file, buka file, dan input file ke array
+	gets(file);
+	//fp = fopen(file, "r");
+	//input file ke array
+	
+	//MENU
+	system("CLS");
+	do{
+		//Membaca pilihan
+		printf("MENU:\n1. Tick\n2. Animate\n3. Quit\nPilihan anda:");
+		scanf("%d", &pilihan);
+		
+		//TICK : Animasi sekali
+		if (pilihan == 1){
+			//print array
+		}
+		
+		//ANIMATE : Animasi sesuai banyak iterasi
+		else if(pilihan == 2){
+			printf("Banyaknya iterasi yang diinginkan:");
+			scanf("%d", &loop);
+			for (i=0; i<loop; i++){
+				system("CLS");
+				//print array;
+				delay(250);
+			}
+		}
+		
+		//QUIT : keluar
+	}while(pilihan!=3);
+	
+	return 0;
+}
+
 
 

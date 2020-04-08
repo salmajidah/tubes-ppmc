@@ -17,7 +17,7 @@ int WrapAround (int index, int length) {
 	}
 }
 
-//ini fungsi untuk menghitung tetangga sel (Neighbor) 
+//ini fungsi untuk menghitung tetangga sel (Neighbors) 
 //x dan y adalah indeks lokasi saat itu
 int Neighbors (char cell[cols][rows],int x, int y) {
 	int i,j;

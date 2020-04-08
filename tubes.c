@@ -24,8 +24,8 @@ int Neighbors (char cell[cols][rows],int x, int y) {
 	int sum = 0;
 	for (i = -1; i<2; i++) { 
 		for (j = -1; j<2; j++) { 
-			if (cell[x+i][y+j] == 'X') { 
-				sum = sum + cell[WrapAround(x+i,cols)][WrapAround(y+j,rows)];
+			if (cell[WrapAround(x+i,cols)][WrapAround(y+j,rows)] == 'X') { 
+				sum++;
 			}
 		}
 	}

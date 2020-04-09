@@ -53,7 +53,10 @@ int Neighbors (char cell[cols][rows],int x, int y) {
 		sum = sum - 1; //karena tidak menghitung dirinya sendiri
 	}
 	return sum;
-} 
+}
+
+int Condition () { 
+}
 
 //untuk delay
 void delay(int number_of_milliseconds) 

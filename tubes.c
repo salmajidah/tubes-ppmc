@@ -91,6 +91,7 @@ int main(){
 	char file[100];
 	FILE *fp;
 	int i, loop, pilihan;
+	char simpan;
 	
 	//Sambutan awal
 	greetings();
@@ -124,6 +125,20 @@ int main(){
 		}
 		
 		//QUIT : keluar
+		else if (pilihan == 3){
+			printf("Simpan seed terakhir?(Y/N) : ");
+			scanf("%c", &simpan);
+			if (simpan == 'Y'){
+				printf("Nama file: ");
+				gets(file);
+				//print ke file eksternal
+			}
+		}
+		
+		//Masukan salah
+		else{
+			printf("Masukan salah! Silahkan masukkan kembali pilihan Anda!\n");
+		}	
 	}while(pilihan!=3);
 	
 	return 0;

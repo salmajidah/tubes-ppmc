@@ -56,6 +56,7 @@ int Neighbors (char cell[cols][rows],int x, int y) {
 }
 
 //Mengganti array sebelum dengan array sesudah sesuai dengan keadaannya, mati atau hidup
+//ini kodenya belum ku coba, tapi ku kepikirannya kayak gini, jadi langsung mainin arraynya aja
 void Condition (int (*sebelum)[cols][rows], int (*sesudah)[cols][rows]) { 
 	int i, j;
 	for (i=0;i<cols;i++){

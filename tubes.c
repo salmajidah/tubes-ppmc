@@ -55,7 +55,19 @@ int Neighbors (char cell[cols][rows],int x, int y) {
 	return sum;
 }
 
-int Condition (int neighbors) { 
+void Condition (int (*sebelum)[cols][rows], int (*sesudah)[cols][rows]) { 
+	int i, j;
+	for (i=0;i<cols;i++){
+		for(j=0;j<cols;j++){
+			if (neighbors((*sebelum)[i][j])<=1)
+				(*sesudah)[i][j] = 0;
+			else if(neighbors((*sebelum)[i][j])<4)
+				((*sesudah)[i][j])=1;
+			else
+				((*sesudah)[i][j])=0;
+		}
+	}
+	(*sebelum) = (*sesudah);
 }
 
 //untuk delay

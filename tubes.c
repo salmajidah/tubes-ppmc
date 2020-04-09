@@ -63,7 +63,7 @@ void Condition (int (*sebelum)[cols][rows], int (*sesudah)[cols][rows]) {
 		for(j=0;j<cols;j++){
 			if (Neighbors((*sebelum), i, j)<=1)
 				(*sesudah)[i][j] = 0;
-			else if(Neighbors((*sebelum), i, j)>4)
+			else if(Neighbors((*sebelum), i, j)<4)
 				((*sesudah)[i][j])=1;
 			else
 				((*sesudah)[i][j])=0;

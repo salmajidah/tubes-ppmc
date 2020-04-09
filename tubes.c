@@ -55,7 +55,7 @@ int Neighbors (char cell[cols][rows],int x, int y) {
 	return sum;
 }
 
-int Condition () { 
+int Condition (int element, int neighbors) { 
 }
 
 //untuk delay

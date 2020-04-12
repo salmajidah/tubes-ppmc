@@ -4,9 +4,10 @@
 
 int rows; 
 int cols;
+const NMAX=50;
 
 //membaca input file eksternal
-void inputseed(char (*seed)[100][100]){
+void inputseed(char (*seed)[NMAX][NMAX]){
 	char file[100], c;
 	int i=0,j=0;
 	gets(file);
@@ -54,7 +55,7 @@ int WrapAround (int index, int length) {
 
 //ini fungsi untuk menghitung tetangga sel (Neighbors) 
 //x dan y adalah indeks lokasi saat itu
-int Neighbors (char cell[rows][cols],int x, int y) {
+int Neighbors (char cell[NMAX][NMAX],int x, int y) {
 	int i,j;
 	int sum = 0;
 	for (i = -1; i<2; i++) { 
@@ -72,7 +73,7 @@ int Neighbors (char cell[rows][cols],int x, int y) {
 
 //Mengganti array sebelum dengan array sesudah sesuai dengan keadaannya, mati atau hidup
 //ini kodenya belum ku coba, tapi ku kepikirannya kayak gini, jadi langsung mainin arraynya aja
-void Condition (char seed[rows][cols], char nextseed[rows][cols]) { 
+void Condition (char seed[NMAX][NMAX], char nextseed[NMAX][NMAX]) { 
 	int i, j;
 	for (i=0;i<rows;i++){
 		for(j=0;j<cols;j++){

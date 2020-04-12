@@ -6,7 +6,12 @@ int cols;
 int rows; 
 
 //membaca input file eksternal
-char inputseed (FILE *fp){
+char inputseed(){
+	char file[100];
+	gets(file);
+	FILE *fp;
+	fp=fopen(file,"r");
+	
 	int rows,cols;
 	char c;
 	fscanf(fp,"%d",&rows);
@@ -31,6 +36,10 @@ char inputseed (FILE *fp){
 			seed[i][j]=c;
 		}
 	}
+
+	fclose(fp);
+	free(fp);
+	
 	return seed[i][j];
 }
 

@@ -2,8 +2,8 @@
 #include <stdio.h> 
 #include <time.h>
 
-int cols;
 int rows; 
+int cols;
 
 //membaca input file eksternal
 char inputseed(){
@@ -60,12 +60,12 @@ int WrapAround (int index, int length) {
 
 //ini fungsi untuk menghitung tetangga sel (Neighbors) 
 //x dan y adalah indeks lokasi saat itu
-int Neighbors (char cell[cols][rows],int x, int y) {
+int Neighbors (char cell[rows][cols],int x, int y) {
 	int i,j;
 	int sum = 0;
 	for (i = -1; i<2; i++) { 
 		for (j = -1; j<2; j++) { 
-			if (cell[WrapAround(x+i,cols)][WrapAround(y+j,rows)] == 'X') { 
+			if (cell[WrapAround(x+i,rows)][WrapAround(y+j,cols)] == 'X') { 
 				sum++;
 			}
 		}
@@ -78,19 +78,19 @@ int Neighbors (char cell[cols][rows],int x, int y) {
 
 //Mengganti array sebelum dengan array sesudah sesuai dengan keadaannya, mati atau hidup
 //ini kodenya belum ku coba, tapi ku kepikirannya kayak gini, jadi langsung mainin arraynya aja
-void Condition (int (*sebelum)[cols][rows], int (*sesudah)[cols][rows]) { 
+void Condition (char seed[rows][cols], char nextseed[rows][cols]) { 
 	int i, j;
-	for (i=0;i<cols;i++){
+	for (i=0;i<rows;i++){
 		for(j=0;j<cols;j++){
-			if (Neighbors((*sebelum), i, j)<=1)
-				(*sesudah)[i][j] = 0;
-			else if(Neighbors((*sebelum), i, j)<4)
-				((*sesudah)[i][j])=1;
+			if (Neighbors(seed, i, j)<=1)
+				nextseed[i][j] = '-';
+			else if(Neighbors(seed, i, j)<4)
+				nextseed[i][j]= 'X';
 			else
-				((*sesudah)[i][j])=0;
+				nextseed[i][j]= '-';
 		}
 	}
-	sebelum = sesudah;
+	seed = nextseed;
 	return;
 }
 

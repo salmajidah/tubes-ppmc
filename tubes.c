@@ -6,23 +6,20 @@ int rows;
 int cols;
 
 //membaca input file eksternal
-char inputseed(){
-	char file[100];
+void inputseed(char (*seed)[100][100]){
+	char file[100], c;
+	int i=0,j=0;
 	gets(file);
 	FILE *fp;
 	fp=fopen(file,"r");
-	
-	int rows,cols;
-	char c;
-	fscanf(fp,"%d",&rows);
-	fscanf(fp,"%d",&cols);
-	char seed[rows][cols];
-	int i=0,j=0;
-	
+
+	fscanf(fp,"%d", &rows);
+	fscanf(fp,"%d", &cols);
+
 	while ((i!=rows-1) || (j!=cols-1)){ //selama bukan baris akhir atau kolom akhir
 					    //masukkan karakter ke array
 		c= fgetc(fp);
-		seed[i][j]=c;
+		(*seed)[i][j]=c;
 		++j; //baca di baris yang sama tapi maju kolom selanjutnya
 		
 		if(j>cols-1){ //kalau iterasi melebihi kolom akhir, pindah baris, ulang baca kolom dari awal
@@ -33,14 +30,11 @@ char inputseed(){
 		
 		if ((i==rows-1)&&(j==cols-1)){ //udah di baris akhir dan kolom akhir
 			c=fgetc(fp);
-			seed[i][j]=c;
+			(*seed)[i][j]=c;
 		}
 	}
-
-	fclose(fp);
-	free(fp);
-	
-	return seed[i][j];
+	fclose(fp);	
+	return ;
 }
 
 

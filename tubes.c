@@ -4,7 +4,7 @@
 
 int rows; 
 int cols;
-const NMAX=50;
+const int NMAX=50;
 
 //membaca input file eksternal
 void inputseed(char (*seed)[NMAX][NMAX]){

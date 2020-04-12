@@ -73,19 +73,25 @@ int Neighbors (char cell[NMAX][NMAX],int x, int y) {
 
 //Mengganti array sebelum dengan array sesudah sesuai dengan keadaannya, mati atau hidup
 //ini kodenya belum ku coba, tapi ku kepikirannya kayak gini, jadi langsung mainin arraynya aja
-void Condition (char seed[NMAX][NMAX], char nextseed[NMAX][NMAX]) { 
+void Condition (char (*seed)[NMAX][NMAX], char (*nextseed)[NMAX][NMAX]) { 
 	int i, j;
 	for (i=0;i<rows;i++){
 		for(j=0;j<cols;j++){
-			if (Neighbors(seed, i, j)<=1)
-				nextseed[i][j] = '-';
-			else if(Neighbors(seed, i, j)<4)
-				nextseed[i][j]= 'X';
+			if (Neighbors(*seed, i, j)<=1)
+				(*nextseed)[i][j] = '-';
+			else if(Neighbors(*seed, i, j)<3)
+				(*nextseed)[i][j] = (*seed)[i][j];
+			else if (Neighbors(*seed, i, j)<4)
+				(*nextseed)[i][j] = 'X';
 			else
-				nextseed[i][j]= '-';
+				(*nextseed)[i][j]= '-';
 		}
 	}
-	seed = nextseed;
+	for (i=0; i<rows; i++){
+		for (j=0; j<cols; j++){
+			(*seed)[i][j] = (*nextseed)[i][j];
+		}
+	}
 	return;
 }
 

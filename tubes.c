@@ -14,16 +14,19 @@ char inputseed (FILE *fp){
 	char seed[rows][cols];
 	int i=0,j=0;
 	
-	while ((i!=rows-1) || (j!=cols-1)){
+	while ((i!=rows-1) || (j!=cols-1)){ //selama bukan baris akhir atau kolom akhir
+					    //masukkan karakter ke array
 		c= fgetc(fp);
 		seed[i][j]=c;
-		++j;
-		if(j>cols-1){
+		++j; //baca di baris yang sama tapi maju kolom selanjutnya
+		
+		if(j>cols-1){ //kalau iterasi melebihi kolom akhir, pindah baris, ulang baca kolom dari awal
 			c=fgetc(fp);
 			j=0;
 			i++;
 		}
-		if ((i==rows-1)&&(j==cols-1)){
+		
+		if ((i==rows-1)&&(j==cols-1)){ //udah di baris akhir dan kolom akhir
 			c=fgetc(fp);
 			seed[i][j]=c;
 		}

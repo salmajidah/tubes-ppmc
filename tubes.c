@@ -8,18 +8,27 @@ int rows;
 //membaca input file eksternal
 char inputseed (FILE *fp){
 	int rows,cols;
+	char c;
 	fscanf(fp,"%d",&rows);
 	fscanf(fp,"%d",&cols);
 	char seed[rows][cols];
-	int n=0,i=0;
+	int i=0,j=0;
 	
-	while (n<rows && fgets(seed[n],sizeof(*seed),stdin)!=NULL){ //di geany compile, di command prompt ga bisa keluar outputnya gatau knp
-		n++;
+	while ((i!=rows-1) || (j!=cols-1)){
+		c= fgetc(fp);
+		seed[i][j]=c;
+		++j;
+		if(j>cols-1){
+			c=fgetc(fp);
+			j=0;
+			i++;
 		}
-	while (i<cols && fgets(seed[i],sizeof(*seed),stdin)!=NULL){
-		i++;
+		if ((i==rows-1)&&(j==cols-1)){
+			c=fgetc(fp);
+			seed[i][j]=c;
 		}
-	return(seed[n][i]);
+	}
+	return seed[i][j];
 }
 
 

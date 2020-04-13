@@ -46,7 +46,7 @@ void inputseed(char (*seed)[NMAX][NMAX]){
 }
 
 
-//supaya tetangga di sekitar bisa bersifat toroidal
+//supaya tetangga di sekitar sel bisa bersifat toroidal
 int WrapAround (int index, int length) { 
 	if (index == -1) { 
 		return length - 1; 
@@ -78,7 +78,6 @@ int Neighbors (char cell[NMAX][NMAX],int x, int y) {
 }
 
 //Mengganti array sebelum dengan array sesudah sesuai dengan keadaannya, mati atau hidup
-//ini kodenya belum ku coba, tapi ku kepikirannya kayak gini, jadi langsung mainin arraynya aja
 void Condition (char (*seed)[NMAX][NMAX], char (*nextseed)[NMAX][NMAX]) { 
 	int i, j;
 	for (i=0;i<rows;i++){

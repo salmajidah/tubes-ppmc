@@ -134,7 +134,7 @@ int main(){
 	system("CLS");
 	do{
 		//Membaca pilihan
-		printf("MENU:\n1. Tick\n2. Animate\n3. Quit\nPilihan anda: ");
+		printf("MENU:\n1. Tick\n2. Animate\n3. Quit\nPilihan Anda: ");
 		scanf("%d", &pilihan);
 		
 		//TICK : Animasi sekali

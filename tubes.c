@@ -1,13 +1,15 @@
 #include <stdio.h> 
 #include <time.h>
-
+#include <string.h>
+#include <stdlib.h>
 int rows; 
 int cols;
 const NMAX=50;
 
 //membaca input file eksternal
 void inputseed(char (*seed)[NMAX][NMAX]){
-	char file[100], c;
+	char c, *file;
+	file = (char*)malloc(sizeof(char));
 	int i,j;
 	FILE *fp;
 	printf("Input File: ");
@@ -26,7 +28,8 @@ void inputseed(char (*seed)[NMAX][NMAX]){
 			}
 		}
 	}
-
+	
+	free(file);
 	fclose(fp);
 	return ;
 }
@@ -155,10 +158,12 @@ int main(){
 		
 		//QUIT : keluar
 		else if (pilihan == 3){
-			printf("Input seed baru?(Y/N) : ");
+			printf("Input seed baru? (Y/N) : ");
 			scanf(" %c", &simpan);
 			if (simpan == 'Y'){
+				getchar();
 				inputseed(&seed);
+				system("CLS");
 			}
 		}
 		

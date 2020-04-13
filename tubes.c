@@ -1,43 +1,35 @@
-//ini buat tubes ppmc
 #include <stdio.h> 
 #include <time.h>
 
 int rows; 
 int cols;
-const int NMAX=50;
+const NMAX=50;
 
 //membaca input file eksternal
 void inputseed(char (*seed)[NMAX][NMAX]){
 	char file[100], c;
-	int i=0,j=0;
-	gets(file);
+	int i,j;
 	FILE *fp;
+	printf("Input File: ");
+	gets(file);
 	fp=fopen(file,"r");
 
 	fscanf(fp,"%d", &rows);
 	fscanf(fp,"%d", &cols);
 
-	while ((i!=rows-1) || (j!=cols-1)){ //selama bukan baris akhir atau kolom akhir
-					    //masukkan karakter ke array
-		c= fgetc(fp);
-		(*seed)[i][j]=c;
-		++j; //baca di baris yang sama tapi maju kolom selanjutnya
-		
-		if(j>cols-1){ //kalau iterasi melebihi kolom akhir, pindah baris, ulang baca kolom dari awal
-			c=fgetc(fp);
-			j=0;
-			i++;
-		}
-		
-		if ((i==rows-1)&&(j==cols-1)){ //udah di baris akhir dan kolom akhir
-			c=fgetc(fp);
-			(*seed)[i][j]=c;
+	fgetc(fp);
+	for (i=0; i<rows; i++){
+		for (j=0; j<=cols; j++){
+			c = fgetc(fp);
+			if (c!='\n'){			
+				(*seed)[i][j]=c;
+			}
 		}
 	}
-	fclose(fp);	
+
+	fclose(fp);
 	return ;
 }
-
 
 
 //supaya tetangga di sekitar bisa bersifat toroidal
@@ -117,7 +109,6 @@ void greetings(){
 	printf("3. Jika terdapat sebuah sel hidup yang memiliki lebih dari 4 tetangga yang hidup,\n   sel tersebut mati pada iterasi selanjutnya (overpopulation).\n");
 	printf("4. Jika terdapat sebuah sel mati yang memiliki 3 tetangga yang hidup, sel tersebut\n   menjadi hidup pada iterasi selanjutnya (reproduction).\n");
 	printf("\nPermainan akan dimulai dengan kondisi awal pada file yang Anda masukkan\n");
-	printf("Input file:");
 	return;
 }
 
@@ -125,61 +116,58 @@ void greetings(){
 //PROGRAM UTAMA
 int main(){
 	//Deklarasi Variabel
-	char file[100];
+	char file[100], seed[NMAX][NMAX], newseed[NMAX][NMAX];
 	FILE *fp;
 	int i, loop, pilihan;
-	char simpan;
+	char simpan = 'Y';
 	
 	//Sambutan awal
 	greetings();
 	
 	//Menerima nama file, buka file, dan input file ke array
-	gets(file);
-	//fp = fopen(file, "r");
-	//input file ke array
+	inputseed(&seed);
 	
 	//MENU
 	system("CLS");
 	do{
 		//Membaca pilihan
-		printf("MENU:\n1. Tick\n2. Animate\n3. Quit\nPilihan anda:");
+		printf("MENU:\n1. Tick\n2. Animate\n3. Quit\nPilihan anda: ");
 		scanf("%d", &pilihan);
 		
 		//TICK : Animasi sekali
 		if (pilihan == 1){
-			//print array
+			system("CLS");
+			Condition(&seed, &newseed);
+			//printseed(seed);
 		}
 		
 		//ANIMATE : Animasi sesuai banyak iterasi
 		else if(pilihan == 2){
-			printf("Banyaknya iterasi yang diinginkan:");
+			printf("Banyaknya iterasi yang diinginkan: ");
 			scanf("%d", &loop);
 			for (i=0; i<loop; i++){
 				system("CLS");
-				//print array;
+				Condition(&seed, &newseed);
+				//printseed(seed);
 				delay(250);
 			}
 		}
 		
 		//QUIT : keluar
 		else if (pilihan == 3){
-			printf("Simpan seed terakhir?(Y/N) : ");
-			scanf("%c", &simpan);
+			printf("Input seed baru?(Y/N) : ");
+			scanf(" %c", &simpan);
 			if (simpan == 'Y'){
-				printf("Nama file: ");
-				gets(file);
-				//print ke file eksternal
+				inputseed(&seed);
 			}
 		}
 		
 		//Masukan salah
 		else{
-			printf("Masukan salah! Silahkan masukkan kembali pilihan Anda!\n");
+			printf("\nMasukan salah! Silahkan masukkan kembali pilihan Anda!\n\n");
 		}	
-	}while(pilihan!=3);
+		
+	}while(simpan =='Y');
 	
 	return 0;
 }
-
-
-

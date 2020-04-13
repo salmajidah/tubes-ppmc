@@ -111,7 +111,7 @@ void greetings(){
 	printf("2. Jika terdapat sebuah sel hidup yang memiliki 2 tetangga yang hidup, sel tersebut\n   tetap hidup pada iterasi selanjutnya (next generation).\n");
 	printf("3. Jika terdapat sebuah sel hidup yang memiliki lebih dari 4 tetangga yang hidup,\n   sel tersebut mati pada iterasi selanjutnya (overpopulation).\n");
 	printf("4. Jika terdapat sebuah sel mati yang memiliki 3 tetangga yang hidup, sel tersebut\n   menjadi hidup pada iterasi selanjutnya (reproduction).\n");
-	printf("\nPermainan akan dimulai dengan kondisi awal pada file yang Anda masukkan\n");
+	printf("\nPermainan akan dimulai dengan kondisi awal sesuai dengan file yang Anda masukkan\n");
 	return;
 }
 

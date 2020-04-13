@@ -111,6 +111,20 @@ void delay(int number_of_milliseconds)
         ; 
 }
 
+//untuk print
+void printseed (char(seed)[NMAX][NMAX])
+{    
+    int i,j;
+    for(i=0;i<rows;i++)    
+    {    
+        printf("\n");    
+        for (j=0;j<cols;j++)    
+        {    
+            printf("%c",seed[i][j]);    
+        }    
+    }    
+}
+
 //Sambutan awal
 void greetings(){
 	printf("Selamat datang di Conway Game of Life!\n\n");

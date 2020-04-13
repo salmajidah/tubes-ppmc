@@ -1,3 +1,14 @@
+/* EL2208 Praktikum Pemecahan Masalah dengan C 2019/2020  
+* MODUL 8 – TUGAS BESAR  
+* Kelompok   		: 3  
+* Hari dan Tanggal 	: Kamis, 29 Maret 2018  
+* Asisten (NIM)  	: Meinanto Tri Yuriawan (13217021)  
+* Nama File   		: tubes.c  
+* Deskripsi   		: [Program Utama Tugas Besar] Mencetak kondisi sel (hidup atau mati)
+*			berdasarkan jumlah sel tetangga pada layar sebanyak masukan pengguna
+*			dengan kondisi awal sel sesuai dengan file eksternal yang dimasukkan pengguna    
+*/ 
+
 #include <stdio.h> 
 #include <time.h>
 #include <string.h>

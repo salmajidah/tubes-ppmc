@@ -33,5 +33,11 @@
  - Revisi fungsi input menjadi prosedur
  - Revisi prosedur condition dan pendefinisian ulang aturan kondisi mati hidup sel
  
+ 13 APRIL 2020:
+ - Revisi fungsi input agar \n tidak terbaca dan dapat membaca sel input dengan sesuai
+ - ASISTENSI : 
  
+ 14 APRIL 2020:
+ - Revisi parameter fungsi dan prosedur agar menggunakan dynamic array
+ - Revisi input agar mendefinisikan dynamic array
  

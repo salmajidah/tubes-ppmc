@@ -120,16 +120,16 @@ void delay(int number_of_milliseconds)
 }
 
 //untuk print
-void printseed (char(seed)[NMAX][NMAX])
+void printseed (char (**seed))
 {    
     int i,j;
     for(i=0;i<rows;i++)    
-    {    
-        printf("\n");    
-        for (j=0;j<cols;j++)    
+    {       
+        for (j=0;j<cols;j++)  
         {    
             printf("%c",seed[i][j]);    
-        }    
+        }
+        printf("\n");    
     }    
 }
 

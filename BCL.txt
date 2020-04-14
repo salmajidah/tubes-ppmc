@@ -15,9 +15,11 @@
  - Pembagian tugas
  
  8 APRIL 2020:
- - Pengerjaan fungsi menghitung tetangga sel (belum toroidal)
+ - Pengerjaan fungsi menghitung tetangga sel 
+ - Pengerjaan fungsi wraparoudng agar tetangga sel dapat dihitung secara toroidal
  - Pengerjaan fungsi input file
+ - Pengerjaan fungsi delay untuk delay 250ms saat menganimasikan sel
  
  9 APRIL 2020:
- 
+ - 
  

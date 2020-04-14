@@ -40,6 +40,7 @@
                - ** tambahin lagi kemaren nanya apa aja:( lupa aku.. **
  
  14 APRIL 2020:
+ - Pengerjaan prosedur printseed untuk mencetak sel ke layar
  - Revisi parameter fungsi dan prosedur agar menggunakan dynamic array
  - Revisi input agar mendefinisikan dynamic array
  

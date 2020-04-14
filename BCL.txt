@@ -38,9 +38,10 @@
  - ASISTENSI : - memastikan ulang aturan hidup mati sel
                - bertanya terkait isi laporan
                - ** tambahin lagi kemaren nanya apa aja:( lupa aku.. **
+ - Pengerjaan prosedur printseed untuk mencetak sel ke layar
  
  14 APRIL 2020:
- - Pengerjaan prosedur printseed untuk mencetak sel ke layar
+ - Revisi prosedur printseed agar sesuai dengan tampilan yang diinginkan
  - Revisi parameter fungsi dan prosedur agar menggunakan dynamic array
  - Revisi input agar mendefinisikan dynamic array
  

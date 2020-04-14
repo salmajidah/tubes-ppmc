@@ -69,7 +69,7 @@ int WrapAround (int index, int length) {
 
 //ini fungsi untuk menghitung tetangga sel (Neighbors) 
 //x dan y adalah indeks lokasi saat itu
-int Neighbors (char cell[NMAX][NMAX],int x, int y) {
+int Neighbors (char **cell,int x, int y) {
 	int i,j;
 	int sum = 0;
 	for (i = -1; i<2; i++) { 
@@ -86,7 +86,7 @@ int Neighbors (char cell[NMAX][NMAX],int x, int y) {
 }
 
 //Mengganti array sebelum dengan array sesudah sesuai dengan keadaannya, mati atau hidup
-void Condition (char (*seed)[NMAX][NMAX], char (*nextseed)[NMAX][NMAX]) { 
+void Condition (char *(**seed), char *(**nextseed)) { 
 	int i, j;
 	for (i=0;i<rows;i++){
 		for(j=0;j<cols;j++){
@@ -120,16 +120,16 @@ void delay(int number_of_milliseconds)
 }
 
 //untuk print
-void printseed (char (**seed))
+void printseed (char(seed)[NMAX][NMAX])
 {    
     int i,j;
     for(i=0;i<rows;i++)    
-    {       
-        for (j=0;j<cols;j++)  
+    {    
+        printf("\n");    
+        for (j=0;j<cols;j++)    
         {    
             printf("%c",seed[i][j]);    
-        }
-        printf("\n");    
+        }    
     }    
 }
 
@@ -164,6 +164,7 @@ int main(){
 	
 	system("CLS");
 	do{
+		printf("\n"); 
 		//Menampilkan MENU dan Membaca pilihan
 		printf("MENU:\n1. Tick- Menampilkan hasil iterasi sel satu kali\n");
 		printf("2. Animate - Menampilkan hasil iterasi sel secara berurutan sebanyak masukan Anda\n");

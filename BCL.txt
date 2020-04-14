@@ -35,7 +35,9 @@
  
  13 APRIL 2020:
  - Revisi fungsi input agar \n tidak terbaca dan dapat membaca sel input dengan sesuai
- - ASISTENSI : 
+ - ASISTENSI : - memastikan ulang aturan hidup mati sel
+               - bertanya terkait isi laporan
+               - ** tambahin lagi kemaren nanya apa aja:( lupa aku.. **
  
  14 APRIL 2020:
  - Revisi parameter fungsi dan prosedur agar menggunakan dynamic array

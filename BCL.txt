@@ -16,7 +16,7 @@
  
  8 APRIL 2020:
  - Pengerjaan fungsi menghitung tetangga sel 
- - Pengerjaan fungsi wraparoudng agar tetangga sel dapat dihitung secara toroidal
+ - Pengerjaan fungsi wraparound agar tetangga sel dapat dihitung secara toroidal
  - Pengerjaan fungsi input file
  - Pengerjaan fungsi delay untuk delay 250ms saat menganimasikan sel
  - Pengerjaan prosedur greetings untuk opening program

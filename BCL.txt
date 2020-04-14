@@ -19,7 +19,13 @@
  - Pengerjaan fungsi wraparoudng agar tetangga sel dapat dihitung secara toroidal
  - Pengerjaan fungsi input file
  - Pengerjaan fungsi delay untuk delay 250ms saat menganimasikan sel
+ - Pengerjaan prosedur greetings untuk opening program
  
  9 APRIL 2020:
- - 
+ - Penyatuan program
+ - Revisi agar dapat disatukan ke main
+ ** jelasin revisinya apa**
+ - Pembuatan flowchart program
+ 
+ 
  

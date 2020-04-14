@@ -14,5 +14,10 @@
  - Online meeting, penyatuan pemikiran mengenai alur tugas besar
  - Pembagian tugas
  
- 7 APRIL 2020:
+ 8 APRIL 2020:
+ - Pengerjaan fungsi menghitung tetangga sel (belum toroidal)
+ - Pengerjaan fungsi input file
+ 
+ 9 APRIL 2020:
+ 
  

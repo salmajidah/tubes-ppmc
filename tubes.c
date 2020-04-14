@@ -18,7 +18,7 @@ int cols;
 const NMAX=50;
 
 //membaca input file eksternal
-void inputseed(char (*seed)[NMAX][NMAX]){
+void inputseed(char *(**seed)){
 	char c, *file;
 	file = (char*)malloc(sizeof(char));
 	int i,j;
@@ -29,6 +29,11 @@ void inputseed(char (*seed)[NMAX][NMAX]){
 
 	fscanf(fp,"%d", &rows);
 	fscanf(fp,"%d", &cols);
+	(*seed)=malloc(rows*sizeof(char *));
+	
+	for (i=0;i<cols;i++){
+		(*seed)[i]=malloc(cols*sizeof(char));
+		}
 
 	fgetc(fp);
 	for (i=0; i<rows; i++){

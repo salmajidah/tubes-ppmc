@@ -26,8 +26,12 @@
  - Revisi agar dapat disatukan ke main
  ** jelasin revisinya apa**
  - Pembuatan flowchart program dan fungsi secara garis besar
- - Perancangan fungsi condition
+ - Perancangan prosedur condition
  - Pendefinisian ulang alur kerja program
+ 
+ 12 APRIL 2020:
+ - Revisi fungsi input menjadi prosedur
+ - Revisi prosedur condition dan pendefinisian ulang aturan kondisi mati hidup sel
  
  
  

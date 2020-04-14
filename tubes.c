@@ -15,7 +15,6 @@
 #include <stdlib.h>
 int rows; 
 int cols;
-const NMAX=50;
 
 //membaca input file eksternal
 void inputseed(char*(**seed),char *(**newseed)){
@@ -152,8 +151,7 @@ void greetings(){
 //PROGRAM UTAMA
 int main(){
 	//Deklarasi Variabel
-	char file[100], seed[NMAX][NMAX], newseed[NMAX][NMAX];
-	FILE *fp;
+	char **seed, **newseed;
 	int i, loop, pilihan;
 	char simpan = 'Y';
 	
@@ -161,41 +159,52 @@ int main(){
 	greetings();
 	
 	//Menerima nama file, buka file, dan input file ke array
-	inputseed(&seed);
+	inputseed(&seed, &newseed);
 	
-	//MENU
+	
 	system("CLS");
 	do{
-		//Membaca pilihan
-		printf("MENU:\n1. Tick\n2. Animate\n3. Quit\nPilihan Anda: ");
+		//Menampilkan MENU dan Membaca pilihan
+		printf("MENU:\n1. Tick- Menampilkan hasil iterasi sel satu kali\n");
+		printf("2. Animate - Menampilkan hasil iterasi sel secara berurutan sebanyak masukan Anda\n");
+		printf("3. Quit - Keluar dari permainan atau masukkan berkas sel baru\nPilihan Anda: ");
 		scanf("%d", &pilihan);
 		
 		//TICK : Animasi sekali
 		if (pilihan == 1){
 			system("CLS");
 			Condition(&seed, &newseed);
-			//printseed(seed);
+			printseed(seed);
 		}
 		
-		//ANIMATE : Animasi sesuai banyak iterasi
+		//ANIMATE : Animasi sesuai banyak iterasi yang diinginkan pengguna
 		else if(pilihan == 2){
 			printf("Banyaknya iterasi yang diinginkan: ");
 			scanf("%d", &loop);
 			for (i=0; i<loop; i++){
 				system("CLS");
 				Condition(&seed, &newseed);
-				//printseed(seed);
+				printseed(seed);
 				delay(250);
 			}
 		}
 		
-		//QUIT : keluar
+		//QUIT : keluar atau masukkan berkas baru
 		else if (pilihan == 3){
-			printf("Masukkan berkas baru? (Y/N) : ");
-			scanf(" %c", &simpan);
+			do{
+				//Pilihan untuk memasukkan berkas baru
+				printf("Masukkan berkas baru? (Y/N) : ");
+				scanf(" %c", &simpan);
+				
+				//Masukan salah
+				if (simpan!='Y' &&simpan!='N')
+					printf("\nMasukan salah! Silahkan masukkan kembali pilihan Anda!\n\n");
+			}while (simpan!='Y' &&simpan!='N');
+			
+			//Jika ingin memasukkan berkas baru
 			if (simpan == 'Y'){
 				getchar();
-				inputseed(&seed);
+				inputseed(&seed, &newseed);
 				system("CLS");
 			}
 		}
@@ -204,7 +213,6 @@ int main(){
 		else{
 			printf("\nMasukan salah! Silahkan masukkan kembali pilihan Anda!\n\n");
 		}	
-		
 	}while(simpan =='Y');
 	
 	return 0;

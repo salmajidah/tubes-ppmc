@@ -25,7 +25,9 @@
  - Penyatuan program
  - Revisi agar dapat disatukan ke main
  ** jelasin revisinya apa**
- - Pembuatan flowchart program
+ - Pembuatan flowchart program dan fungsi secara garis besar
+ - Perancangan fungsi condition
+ - Pendefinisian ulang alur kerja program
  
  
  

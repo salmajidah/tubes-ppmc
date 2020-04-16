@@ -9,7 +9,7 @@
  
  5 APRIL 2020:
  - Inisiasi pengerjaan tugas
- - Mencari referensi terkait game of life 
+ - Pencarian referensi terkait game of life 
  
  6 APRIL 2020:
  - Online meeting, penyatuan pemikiran mengenai alur tugas besar
@@ -46,7 +46,7 @@
  - Revisi prosedur printseed agar sesuai dengan tampilan yang diinginkan
  - Revisi parameter fungsi dan prosedur agar menggunakan dynamic array
  - Revisi input agar mendefinisikan dynamic array
- - Menguji keseluruhan program apakah sudah berjalan dengan benar atau belum 
+ - Pengujian keseluruhan program apakah sudah berjalan dengan benar atau belum 
  
  17 APRIL 2020 
  - Pengumpulan laporan 2 

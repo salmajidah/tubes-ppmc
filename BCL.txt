@@ -46,4 +46,7 @@
  - Revisi prosedur printseed agar sesuai dengan tampilan yang diinginkan
  - Revisi parameter fungsi dan prosedur agar menggunakan dynamic array
  - Revisi input agar mendefinisikan dynamic array
+ - Menguji keseluruhan program apakah sudah berjalan dengan benar atau belum 
  
+ 17 APRIL 2020 
+ - Pengumpulan laporan 2 

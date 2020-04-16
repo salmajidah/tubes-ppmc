@@ -161,8 +161,8 @@ int main(){
 	//Menerima nama file, buka file, dan input file ke array
 	inputseed(&seed, &newseed);
 	
-	
 	system("CLS");
+	printseed(seed);
 	do{
 		printf("\n"); 
 		//Menampilkan MENU dan Membaca pilihan
@@ -207,6 +207,7 @@ int main(){
 				getchar();
 				inputseed(&seed, &newseed);
 				system("CLS");
+				printseed(seed);
 			}
 		}
 		

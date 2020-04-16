@@ -85,24 +85,24 @@ int Neighbors (char **cell,int x, int y) {
 	return sum;
 }
 
-//Mengganti array sebelum dengan array sesudah sesuai dengan keadaannya, mati atau hidup
+//Mengganti array sebelum dengan array sesudah sesuai dengan keadaan tiap sel, baik mati atau hidup
 void Condition (char *(**seed), char *(**nextseed)) { 
 	int i, j;
 	for (i=0;i<rows;i++){
 		for(j=0;j<cols;j++){
 			if (Neighbors(*seed, i, j)<=1)
-				(*nextseed)[i][j] = '-';
+				(*nextseed)[i][j] = '-'; //underpopulation
 			else if(Neighbors(*seed, i, j)<3)
-				(*nextseed)[i][j] = (*seed)[i][j];
+				(*nextseed)[i][j] = (*seed)[i][j]; //next generation 
 			else if (Neighbors(*seed, i, j)<4)
-				(*nextseed)[i][j] = 'X';
+				(*nextseed)[i][j] = 'X'; //reproduction
 			else
-				(*nextseed)[i][j]= '-';
+				(*nextseed)[i][j]= '-'; //overpopulation
 		}
 	}
 	for (i=0; i<rows; i++){
 		for (j=0; j<cols; j++){
-			(*seed)[i][j] = (*nextseed)[i][j];
+			(*seed)[i][j] = (*nextseed)[i][j]; //memindahkan array temporary ke array semula
 		}
 	}
 	return;

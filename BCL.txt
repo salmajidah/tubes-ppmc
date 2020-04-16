@@ -21,6 +21,7 @@
  - Pengerjaan fungsi input file
  - Pengerjaan fungsi delay untuk delay 250ms saat menganimasikan sel
  - Pengerjaan prosedur greetings untuk opening program
+ - Pengerjaan laporan 1
  
  9 APRIL 2020:
  - Penyatuan program
@@ -47,6 +48,10 @@
  - Revisi parameter fungsi dan prosedur agar menggunakan dynamic array
  - Revisi input agar mendefinisikan dynamic array
  - Pengujian keseluruhan program apakah sudah berjalan dengan benar atau belum 
+ 
+ 16 APRIL 2020
+ - Pengerjaan Laporan 2
+ - Penyesuaian terakhir program dengan spesifikasi tugas besar
  
  17 APRIL 2020 
  - Pengumpulan laporan 2 

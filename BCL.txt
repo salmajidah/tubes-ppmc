@@ -9,6 +9,7 @@
  
  5 APRIL 2020:
  - Inisiasi pengerjaan tugas
+ - Mencari referensi terkait game of life 
  
  6 APRIL 2020:
  - Online meeting, penyatuan pemikiran mengenai alur tugas besar
@@ -28,6 +29,7 @@
  - Pembuatan flowchart program dan fungsi secara garis besar
  - Perancangan prosedur condition
  - Pendefinisian ulang alur kerja program
+ - Pengumpulan laporan 1 
  
  12 APRIL 2020:
  - Revisi fungsi input menjadi prosedur
@@ -36,8 +38,8 @@
  13 APRIL 2020:
  - Revisi fungsi input agar \n tidak terbaca dan dapat membaca sel input dengan sesuai
  - ASISTENSI : - memastikan ulang aturan hidup mati sel
-               - bertanya terkait isi laporan
-               - ** tambahin lagi kemaren nanya apa aja:( lupa aku.. **
+               - bertanya terkait isi laporan (apa itu algoritma, struktur file, pengujian program) 
+               - bertanya terkait jenis array yang lebih baik untuk digunakan
  - Pengerjaan prosedur printseed untuk mencetak sel ke layar
  
  14 APRIL 2020:
